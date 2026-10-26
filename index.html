@@ -3,44 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VeRaFIED Studios</title>
+<title>VeRaFIED Studios — Official Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#05060a;color:#e6e9f2;font-family:system-ui,sans-serif;}
-.container{max-width:1100px;margin:0 auto;padding:2rem;}
-h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:0.95;background:linear-gradient(105deg,#fff,#ffd9c7,#ff6b2c,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent;}
-.nav{position:sticky;top:0;background:#05060aee;backdrop-filter:blur(12px);padding:1rem 0;border-bottom:1px solid #ffffff18;}
-.nav a{color:#cbd5e1;text-decoration:none;margin-right:1.2rem;font-size:0.9rem;}
-.card{background:#0d1019;border:1px solid #ffffff15;border-radius:16px;padding:1.5rem;margin:1rem 0;}
-.btn{display:inline-block;background:linear-gradient(90deg,#ff6b2c,#f04e12);color:#fff;padding:0.8rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:600;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:1.5rem;}
-img{max-width:100%;border-radius:12px;}
+*{box-sizing:border-box}
+body{margin:0;background:#05060a;color:#e6e9f2;font-family:Inter,system-ui,sans-serif}
+.header{position:sticky;top:0;z-index:10;background:#05060acc;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12;padding:1rem 0}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:.12em;font-size:1.1rem}
+.logo span{color:#ff6b2c}
+.cart{background:#ffffff12;border:1px solid #ffffff20;border-radius:999px;padding:.5rem 1rem;font-size:.85rem;font-weight:600}
+.hero{max-width:1200px;margin:0 auto;padding:4rem 1.25rem 2rem;text-align:center}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1;margin:0 0 .75rem;background:linear-gradient(105deg,#fff,#ffd9c7 40%,#ff6b2c 70%,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#94a3b8;max-width:32rem;margin:0 auto 1.5rem;font-size:1.05rem}
+.badge{display:inline-block;background:#ff6b2c22;color:#ff6b2c;border:1px solid #ff6b2c44;border-radius:999px;padding:.3rem .8rem;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1rem}
+.grid{max-width:1200px;margin:0 auto;padding:1rem 1.25rem 4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.product{background:#0d1019;border:1px solid #ffffff12;border-radius:20px;overflow:hidden;transition:transform .2s,border-color .2s}
+.product:hover{transform:translateY(-4px);border-color:#ffffff28}
+.product-img{height:260px;background:linear-gradient(180deg,#0d1019,#05060a);display:flex;align-items:center;justify-content:center;position:relative}
+.product-img img{width:70%;height:70%;object-fit:contain;filter:drop-shadow(0 8px 24px #ff6b2c33)}
+.product-body{padding:1.25rem}
+.product h3{margin:0 0 .4rem;font-size:1.15rem;font-weight:700}
+.product .desc{color:#94a3b8;font-size:.9rem;margin:0 0 1rem;line-height:1.45}
+.price-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.price{font-size:1.4rem;font-weight:800;color:#fff}
+.sizes{display:flex;gap:.4rem;margin-bottom:1rem;flex-wrap:wrap}
+.size{border:1px solid #ffffff20;background:transparent;color:#cbd5e1;border-radius:8px;padding:.35rem .7rem;font-size:.75rem;font-weight:600;cursor:pointer}
+.size.active{background:#fff;color:#05060a;border-color:#fff}
+.add{width:100%;background:linear-gradient(90deg,#ff6b2c,#f04e12);color:#fff;border:none;border-radius:999px;padding:.85rem;font-weight:700;font-size:.95rem;cursor:pointer}
+.add:hover{opacity:.9}
+.footer{text-align:center;padding:2rem 1rem;color:#64748b;font-size:.85rem;border-top:1px solid #ffffff08}
 </style>
 </head>
 <body>
-<nav class="nav"><div class="container">
-<strong style="color:#fff;letter-spacing:0.15em;">VeRa<span style="color:#ff6b2c">FIED</span> Studios</strong>
-<span style="float:right"><a href="#merch">Merch</a> <a href="#contact">Contact</a></span>
-</div></nav>
-<div class="container">
-<p style="color:#94a3b8;font-size:0.85rem;letter-spacing:0.2em;text-transform:uppercase;">Florida · Est. 2021</p>
-<h1>We don't just build apps.<br>We build ecosystems.</h1>
-<p style="max-width:36rem;color:#cbd5e1;font-size:1.1rem;line-height:1.6;">VeRaFIED Studios — music, ExoVet telehealth, native apps, and Vera AI. Love Always. Hate Never.</p>
-<p><a class="btn" href="#merch">Shop Merch</a></p>
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">VeRa<span>FIED</span> Store</div>
+    <div class="cart">Cart · 0</div>
+  </div>
+</header>
 
-<section id="merch" style="margin-top:4rem;">
-<h2>Wear the Studio</h2>
+<section class="hero">
+  <div class="badge">Official Drop</div>
+  <h1>Wear the Studio</h1>
+  <p>Limited VeRaFIED merch. Fire chameleon energy. Florida roots. Love Always. Hate Never.</p>
+</section>
+
 <div class="grid">
-<div class="card"><img src="/images/logo-mascot.svg" alt="Tee"><h3>VeRaFIED Mascot Tee — $34</h3><p>Heavyweight cotton. Limited drops.</p></div>
-<div class="card"><img src="/images/logo-mascot.svg" alt="Cap"><h3>Studio Cap — $28</h3><p>Love Always. Hate Never. on the back.</p></div>
-<div class="card"><img src="/images/logo-fire-emblem.svg" alt="Hoodie"><h3>Fire Chameleon Hoodie — $68</h3><p>Full fire-emblem back print.</p></div>
-</div>
-</section>
+  <article class="product">
+    <div class="product-img">
+      <img src="https://raw.githubusercontent.com/latorre0825-creator/verafied-studios/main/public/images/logo-mascot.svg" alt="VeRaFIED Mascot Tee">
+    </div>
+    <div class="product-body">
+      <h3>VeRaFIED Mascot Tee</h3>
+      <p class="desc">Heavyweight cotton with the official fire-mascot print. Limited drops.</p>
+      <div class="price-row"><span class="price">$34</span></div>
+      <div class="sizes">
+        <button class="size active">S</button><button class="size">M</button><button class="size">L</button><button class="size">XL</button><button class="size">2XL</button>
+      </div>
+      <button class="add">Add to Cart</button>
+    </div>
+  </article>
 
-<section id="contact" style="margin-top:4rem;">
-<h2>Contact</h2>
-<p>hello@verafied.studio · Florida</p>
-<p>Love Always. Hate Never.</p>
-</section>
+  <article class="product">
+    <div class="product-img">
+      <img src="https://raw.githubusercontent.com/latorre0825-creator/verafied-studios/main/public/images/logo-mascot.svg" alt="Studio Cap">
+    </div>
+    <div class="product-body">
+      <h3>Studio Cap</h3>
+      <p class="desc">Florida home base. “Love Always. Hate Never.” stitched on the back.</p>
+      <div class="price-row"><span class="price">$28</span></div>
+      <div class="sizes"><button class="size active">One Size</button></div>
+      <button class="add">Add to Cart</button>
+    </div>
+  </article>
+
+  <article class="product">
+    <div class="product-img">
+      <img src="https://raw.githubusercontent.com/latorre0825-creator/verafied-studios/main/public/images/logo-fire-emblem.svg" alt="Fire Chameleon Hoodie">
+    </div>
+    <div class="product-body">
+      <h3>Fire Chameleon Hoodie</h3>
+      <p class="desc">Heavyweight hoodie with the full fire-emblem back print. Built for Florida nights.</p>
+      <div class="price-row"><span class="price">$68</span></div>
+      <div class="sizes">
+        <button class="size active">S</button><button class="size">M</button><button class="size">L</button><button class="size">XL</button>
+      </div>
+      <button class="add">Add to Cart</button>
+    </div>
+  </article>
 </div>
+
+<footer class="footer">
+  VeRaFIED Studios · Florida · Love Always. Hate Never.<br>
+  Limited drops announced first on Discord & YouTube
+</footer>
+
+<script>
+document.querySelectorAll('.sizes').forEach(group => {
+  group.addEventListener('click', e => {
+    if (e.target.classList.contains('size')) {
+      group.querySelectorAll('.size').forEach(s => s.classList.remove('active'));
+      e.target.classList.add('active');
+    }
+  });
+});
+document.querySelectorAll('.add').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.textContent = 'Added ✓';
+    btn.style.background = '#4ade80';
+    setTimeout(() => { btn.textContent = 'Add to Cart'; btn.style.background = ''; }, 1500);
+  });
+});
+</script>
 </body>
 </html>
