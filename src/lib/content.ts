@@ -5,7 +5,7 @@ export const siteConfig = {
   motto: "Love Always. Hate Never.",
   description:
     "VeRaFIED Studios is a Florida-born creative and technology studio building music, telehealth, native apps, and Vera AI — intelligence with intention.",
-  url: "https://verafied-studios-live.netlify.app",
+  url: "https://verafied-studios.vercel.app",
   location: "Florida, United States",
   founded: "2021",
   founders: "Luis “Ramey” & Tiffaney “Venus” Latorre",
@@ -20,18 +20,6 @@ export const siteConfig = {
     { label: "SoundCloud", href: "https://soundcloud.com/verafied", handle: "VeRaFIED" },
     { label: "Discord", href: "https://discord.gg/verafied", handle: "Community Server" },
   ],
-} as const;
-
-export const foundersBio = {
-  heading: "Ramey & Venus",
-  names: "Luis “Ramey” & Tiffaney “Venus” Latorre",
-  photo: "/images/founders.jpg",
-  paragraphs: [
-    "We build what we believe in. Music that carries truth. Apps that help people and animals. Technology with heart.",
-    "Luis “Ramey” handles the engineering and the sound; Tiffaney “Venus” leads product and care, and owns ExoVet. Chameleons are family. Florida is home.",
-    "From Florida to the world — Love Always. Hate Never.",
-  ],
-  tags: ["Music", "Creation", "Care", "Chameleons", "Florida"],
 } as const;
 
 export const navLinks = [
@@ -51,6 +39,42 @@ export const heroStats = [
   { value: "100%", label: "In-house", detail: "Designed & engineered by us" },
 ] as const;
 
+export const merch = [
+  {
+    id: "tee",
+    name: "VeRaFIED Mascot Tee",
+    price: "$34",
+    amount: 3400,
+    copy: "Heavyweight cotton with the VeRaFIED fire-mascot print. Limited drops.",
+    accent: "#FF7A45",
+    image: "/images/logo-mascot.png",
+    product: "dark",
+    sizes: ["S", "M", "L", "XL", "2XL"],
+  },
+  {
+    id: "cap",
+    name: "Studio Cap",
+    price: "$28",
+    amount: 2800,
+    copy: "Florida home base. “Love Always. Hate Never.” stitched on the back.",
+    accent: "#7C5CFF",
+    image: "/images/logo-mascot.png",
+    product: "cap",
+    sizes: ["One size"],
+  },
+  {
+    id: "hoodie",
+    name: "Fire Chameleon Hoodie",
+    price: "$68",
+    amount: 6800,
+    copy: "Heavyweight hoodie with the full fire-emblem back print. Built for Florida nights.",
+    accent: "#2DD4BF",
+    image: "/images/logo-fire-emblem.png",
+    product: "dark",
+    sizes: ["S", "M", "L", "XL"],
+  },
+] as const;
+
 export const veraCapabilities = [
   {
     title: "Knows the ecosystem",
@@ -67,16 +91,5 @@ export const veraCapabilities = [
   {
     title: "Respects your data",
     copy: "Private conversations. Nothing sold, nothing shared.",
-  },
-] as const;
-
-export const faqs = [
-  {
-    q: "What is Vera AI?",
-    a: "Vera AI is our own chat assistant — intelligence with intention. It lives on this site and inside our apps.",
-  },
-  {
-    q: "Is ExoVet available for my exotic pet?",
-    a: "ExoVet supports reptiles, amphibians, birds, and small mammals.",
   },
 ] as const;
