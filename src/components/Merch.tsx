@@ -49,8 +49,8 @@ export default function Merch() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {merch.map((item) => (
             <div key={item.id} className="group rounded-2xl border border-white/10 bg-ink-900/40 p-6 transition hover:border-white/20">
-              <div className="aspect-square rounded-xl bg-gradient-to-br from-ink-800 to-ink-950 flex items-center justify-center text-6xl" style={{ boxShadow: `inset 0 0 40px ${item.accent}33` }}>
-                {item.id === "tee" ? "👕" : item.id === "cap" ? "🧢" : "🦎"}
+              <div className="aspect-square rounded-xl bg-ink-950 flex items-center justify-center overflow-hidden" style={{ boxShadow: `inset 0 0 40px ${item.accent}33` }}>
+                <img src={item.image} alt={item.name} className="h-4/5 w-4/5 object-contain" />
               </div>
               <h3 className="mt-5 font-display text-xl font-bold text-white">{item.name}</h3>
               <p className="mt-2 text-sm text-slate-400">{item.copy}</p>
