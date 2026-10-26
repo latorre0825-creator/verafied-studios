@@ -1,0 +1,32 @@
+# VeRaFIED Studios — Netlify deployment configuration
+#
+# Netlify auto-detects Next.js and installs the official runtime, but declaring
+# it here makes the build deterministic. Connect this repo to the Netlify site
+# owned by VeRaFIEDpr@gmail.com and it will build and go live.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  # Match the local toolchain so the build behaves identically on Netlify.
+  NODE_VERSION = "22"
+  # Keep the build from failing on peer-dependency noise.
+  NPM_FLAGS = "--no-audit --no-fund"
+
+# Official Next.js runtime for App Router, API routes and server rendering.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Long-cache the immutable build assets.
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Allow the PWA service worker to control the whole origin.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Service-Worker-Allowed = "/"
